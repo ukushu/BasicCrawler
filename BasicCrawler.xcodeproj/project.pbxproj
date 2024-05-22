@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D9BBC8D2BFEB2A70071965B /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBC8C2BFEB2A70071965B /* Internet.swift */; };
+		1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */; };
 		1D9BBC902BFEB3350071965B /* EssentialsStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC8F2BFEB3350071965B /* EssentialsStatic */; };
 		1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC922BFEB3670071965B /* Alamofire */; };
 		1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC952BFEB39A0071965B /* AsyncNinja */; };
@@ -16,7 +16,7 @@
 
 /* Begin PBXFileReference section */
 		1D9BBC802BFEB2250071965B /* libBasicCrawler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBasicCrawler.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D9BBC8C2BFEB2A70071965B /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
+		1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHTMLDoc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 		1D9BBC822BFEB2250071965B /* BasicCrawler */ = {
 			isa = PBXGroup;
 			children = (
-				1D9BBC8C2BFEB2A70071965B /* Internet.swift */,
+				1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */,
 			);
 			path = BasicCrawler;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9BBC8D2BFEB2A70071965B /* Internet.swift in Sources */,
+				1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

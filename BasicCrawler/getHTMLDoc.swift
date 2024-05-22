@@ -10,7 +10,7 @@ public enum UrlAccessType {
     case Advanced
 }
 
-func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , cookies: [HTTPCookie] = []) -> Document? {
+public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , cookies: [HTTPCookie] = []) -> Document? {
     guard let url = URL(string: urlStr) else { return nil }
     
     if accessType == .Fast {
@@ -19,7 +19,7 @@ func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , cookies
         guard let doc: Document = try? SwiftSoup.parse(html) else { return nil }
         return doc
     } else {
-        guard let html = HTML.getFrom(url: urlStr, cookies: cookies) else { return nil }
+        guard let html = HTML.getFromAdvanced(url: urlStr, cookies: cookies) else { return nil }
         guard let doc: Document = try? SwiftSoup.parse(html) else { return nil }
         return doc
     }
@@ -28,8 +28,8 @@ func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , cookies
 //////////////////////////////
 //////////////////////////////
 
-public class HTML {
-    static func getFrom(url: String, cookies: [HTTPCookie]) -> String? {
+fileprivate class HTML {
+    static func getFromAdvanced(url: String, cookies: [HTTPCookie]) -> String? {
         return getSyncResultFrom {
             let loader = await MyInternetLoader()
             
