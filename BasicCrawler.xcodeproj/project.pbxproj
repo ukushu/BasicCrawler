@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */; };
-		1D9BBC902BFEB3350071965B /* EssentialsStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC8F2BFEB3350071965B /* EssentialsStatic */; };
 		1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC922BFEB3670071965B /* Alamofire */; };
 		1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC952BFEB39A0071965B /* AsyncNinja */; };
 		1D9BBC992BFEB3D20071965B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC982BFEB3D20071965B /* SwiftSoup */; };
+		1D9BBD0D2BFEBFC20071965B /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBD0C2BFEBFC20071965B /* Essentials */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9BBC902BFEB3350071965B /* EssentialsStatic in Frameworks */,
 				1D9BBC992BFEB3D20071965B /* SwiftSoup in Frameworks */,
+				1D9BBD0D2BFEBFC20071965B /* Essentials in Frameworks */,
 				1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */,
 				1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */,
 			);
@@ -85,10 +85,10 @@
 			);
 			name = BasicCrawler;
 			packageProductDependencies = (
-				1D9BBC8F2BFEB3350071965B /* EssentialsStatic */,
 				1D9BBC922BFEB3670071965B /* Alamofire */,
 				1D9BBC952BFEB39A0071965B /* AsyncNinja */,
 				1D9BBC982BFEB3D20071965B /* SwiftSoup */,
+				1D9BBD0C2BFEBFC20071965B /* Essentials */,
 			);
 			productName = BasicCrawler;
 			productReference = 1D9BBC802BFEB2250071965B /* libBasicCrawler.a */;
@@ -119,10 +119,10 @@
 			);
 			mainGroup = 1D9BBC772BFEB2250071965B;
 			packageReferences = (
-				1D9BBC8E2BFEB3350071965B /* XCRemoteSwiftPackageReference "essentials" */,
 				1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */,
 				1D9BBC972BFEB3D20071965B /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				1D9BBD0B2BFEBFC20071965B /* XCRemoteSwiftPackageReference "essentials" */,
 			);
 			productRefGroup = 1D9BBC812BFEB2250071965B /* Products */;
 			projectDirPath = "";
@@ -311,14 +311,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D9BBC8E2BFEB3350071965B /* XCRemoteSwiftPackageReference "essentials" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@gitlab.com:sergiy.vynnychenko/essentials.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -343,14 +335,17 @@
 				kind = branch;
 			};
 		};
+		1D9BBD0B2BFEBFC20071965B /* XCRemoteSwiftPackageReference "essentials" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@gitlab.com:sergiy.vynnychenko/essentials.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D9BBC8F2BFEB3350071965B /* EssentialsStatic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D9BBC8E2BFEB3350071965B /* XCRemoteSwiftPackageReference "essentials" */;
-			productName = EssentialsStatic;
-		};
 		1D9BBC922BFEB3670071965B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -365,6 +360,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D9BBC972BFEB3D20071965B /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		1D9BBD0C2BFEBFC20071965B /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D9BBD0B2BFEBFC20071965B /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
