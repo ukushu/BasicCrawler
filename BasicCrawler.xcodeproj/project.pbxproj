@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D8A1FB22BFEE67600F3CCA3 /* AsyncNinjaStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8A1FB12BFEE67600F3CCA3 /* AsyncNinjaStatic */; };
 		1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */; };
 		1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC922BFEB3670071965B /* Alamofire */; };
-		1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC952BFEB39A0071965B /* AsyncNinja */; };
 		1D9BBC992BFEB3D20071965B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC982BFEB3D20071965B /* SwiftSoup */; };
 		1D9BBD0D2BFEBFC20071965B /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBD0C2BFEBFC20071965B /* Essentials */; };
 /* End PBXBuildFile section */
@@ -26,8 +26,8 @@
 			files = (
 				1D9BBC992BFEB3D20071965B /* SwiftSoup in Frameworks */,
 				1D9BBD0D2BFEBFC20071965B /* Essentials in Frameworks */,
+				1D8A1FB22BFEE67600F3CCA3 /* AsyncNinjaStatic in Frameworks */,
 				1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */,
-				1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,9 +86,9 @@
 			name = BasicCrawler;
 			packageProductDependencies = (
 				1D9BBC922BFEB3670071965B /* Alamofire */,
-				1D9BBC952BFEB39A0071965B /* AsyncNinja */,
 				1D9BBC982BFEB3D20071965B /* SwiftSoup */,
 				1D9BBD0C2BFEBFC20071965B /* Essentials */,
+				1D8A1FB12BFEE67600F3CCA3 /* AsyncNinjaStatic */,
 			);
 			productName = BasicCrawler;
 			productReference = 1D9BBC802BFEB2250071965B /* libBasicCrawler.a */;
@@ -120,9 +120,9 @@
 			mainGroup = 1D9BBC772BFEB2250071965B;
 			packageReferences = (
 				1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */,
 				1D9BBC972BFEB3D20071965B /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				1D9BBD0B2BFEBFC20071965B /* XCRemoteSwiftPackageReference "essentials" */,
+				1D8A1FB02BFEE67600F3CCA3 /* XCRemoteSwiftPackageReference "AsyncNinja" */,
 			);
 			productRefGroup = 1D9BBC812BFEB2250071965B /* Products */;
 			projectDirPath = "";
@@ -311,17 +311,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		1D8A1FB02BFEE67600F3CCA3 /* XCRemoteSwiftPackageReference "AsyncNinja" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			repositoryURL = "git@github.com:serg-vinnie/AsyncNinja.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */ = {
+		1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/serg-vinnie/AsyncNinja.git";
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -346,15 +346,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D8A1FB12BFEE67600F3CCA3 /* AsyncNinjaStatic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D8A1FB02BFEE67600F3CCA3 /* XCRemoteSwiftPackageReference "AsyncNinja" */;
+			productName = AsyncNinjaStatic;
+		};
 		1D9BBC922BFEB3670071965B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		1D9BBC952BFEB39A0071965B /* AsyncNinja */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */;
-			productName = AsyncNinja;
 		};
 		1D9BBC982BFEB3D20071965B /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
