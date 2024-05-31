@@ -71,7 +71,7 @@ fileprivate class MyInternetLoader: NSObject {
     lazy var webView: WKWebView = {
         let webView: WKWebView = WKWebView()
         webView.navigationDelegate = self
-        webView.customUserAgent = customUserAgent
+        webView.customUserAgent = userAgentsList.randomElement()!
         webView.allowsLinkPreview = true
         
         return webView
