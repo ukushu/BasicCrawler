@@ -39,7 +39,7 @@ fileprivate class HTML {
     
     static func getFastFrom(from url: URL, cookies: [HTTPCookie]) -> String? {
         let config = URLSessionConfiguration.default
-        config.headers = [ "User-Agent": customUserAgent ]
+        config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
         
         let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
         
@@ -65,7 +65,6 @@ fileprivate class HTML {
 //////////////////
 ///HELPERS
 //////////////////
-var customUserAgent: String { userAgentsList.randomElement()! }
 
 @MainActor
 fileprivate class MyInternetLoader: NSObject {
