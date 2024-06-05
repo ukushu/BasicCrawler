@@ -14,16 +14,18 @@ public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , 
     guard let url = URL(string: urlStr) else { return nil }
     
     if accessType == .Fast {
-        guard let html = HTML.getFastFrom(from: url, cookies: cookies),
-              let htmlFixed = html.removingPercentEncoding
+        guard let html = HTML.getFastFrom(from: url, cookies: cookies)
         else { return nil }
+        
+        let htmlFixed = html.removingPercentEncoding ?? html
         
         guard let doc: Document = try? SwiftSoup.parse(htmlFixed) else { return nil }
         return doc
     } else {
-        guard let html = HTML.getFromAdvanced(url: urlStr, cookies: cookies),
-              let htmlFixed = html.removingPercentEncoding
+        guard let html = HTML.getFromAdvanced(url: urlStr, cookies: cookies)
         else { return nil }
+        
+        let htmlFixed = html.removingPercentEncoding ?? html
         
         guard let doc: Document = try? SwiftSoup.parse(htmlFixed) else { return nil }
         return doc
