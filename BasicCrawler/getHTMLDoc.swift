@@ -32,6 +32,54 @@ public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , 
     }
 }
 
+public func checkAccessibility(from urlStr: String) -> Bool {
+    var url = URL(string: urlStr)!
+    
+    let config = URLSessionConfiguration.default
+    config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
+    let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+    
+    var failedCounter = 0
+    
+    for _ in 0..<8 {
+        let response = session.data(at: url)
+            .wait()
+            .map{ $0.1 }
+            .maybeSuccess
+        
+        if let response = response?.isResponseOK() {
+            if response == true || failedCounter >= 2 {
+                return response
+            } else {
+                failedCounter += 1
+            }
+        }
+    }
+    
+    fatalError()
+}
+
+public func check404(from urlStr: String) -> Bool {
+    var url = URL(string: urlStr)!
+    
+    let config = URLSessionConfiguration.default
+    config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
+    let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+    
+    for _ in 0..<8 {
+        let response = session.data(at: url)
+            .wait()
+            .map{ $0.1 }
+            .maybeSuccess
+        
+        if let statusCode = response?.getStatusCode() {
+            return statusCode == 404
+        }
+    }
+    
+    fatalError()
+}
+
 //////////////////////////////
 //////////////////////////////
 
@@ -161,3 +209,18 @@ Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/12
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 YaBrowser/24.4.4.1160 Yowser/2.5 Safari/537.36
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 YaBrowser/24.4.4.1160 Yowser/2.5 Safari/537.36
 """.split(separator: "\n").map{ $0.asStr() }
+
+extension URLResponse {
+    func getStatusCode() -> Int? {
+        if let httpResponse = self as? HTTPURLResponse {
+            return httpResponse.statusCode
+        }
+        return nil
+    }
+    
+    func isResponseOK() -> Bool {
+        guard let statusCode = getStatusCode() else { fatalError() }
+        
+        return (200...299).contains(statusCode)
+    }
+}
