@@ -224,3 +224,9 @@ extension URLResponse {
         return (200...299).contains(statusCode)
     }
 }
+
+public extension URL {
+    var urlHost: String {
+        self.absoluteString.extract(regExp: "^(([^:/?#]+):)?^(([^:/?#]+):)?(//([^/?#]*))?").maybeSuccess!
+    }
+}
