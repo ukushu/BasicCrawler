@@ -33,7 +33,7 @@ public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast , 
 }
 
 public func checkAccessibility(from urlStr: String) -> Bool {
-    var url = URL(string: urlStr)!
+    let url = URL(string: urlStr)!
     
     let config = URLSessionConfiguration.default
     config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
@@ -60,7 +60,7 @@ public func checkAccessibility(from urlStr: String) -> Bool {
 }
 
 public func check404(from urlStr: String) -> Bool {
-    var url = URL(string: urlStr)!
+    let url = URL(string: urlStr)!
     
     let config = URLSessionConfiguration.default
     config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
