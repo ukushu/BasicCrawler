@@ -85,7 +85,7 @@ public func check404(from urlStr: String) -> Bool {
 
 fileprivate class HTML {
     static func getFromAdvanced(url: String, cookies: [HTTPCookie]) -> String? {
-        return getSyncResultFrom {
+        return try? getSyncResultFrom {
             let loader = await MyInternetLoader()
             
             return try? await loader.getHTML(from: URL(string: url)!, cookies: cookies)
