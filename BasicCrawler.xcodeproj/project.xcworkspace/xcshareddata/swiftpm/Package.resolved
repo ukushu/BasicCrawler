@@ -1,0 +1,51 @@
+{
+  "originHash" : "fc510f9724e6bb1e4cd28e3513599518c57582235b975f93226c29b9a64f6041",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b5c8945616aceab4c1afc96505314cb1a2947e7c"
+      }
+    },
+    {
+      "identity" : "asyncninja",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/serg-vinnie/AsyncNinja.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7265818f5213ed7e29f47bb7de6f78117f4e37d5"
+      }
+    },
+    {
+      "identity" : "essentials",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/sergiy.vynnychenko/essentials.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f39b456e5f3fa081b17e5f267e00b148efe84041"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "64889f0c732f210a935a0ad7cda38f77f876262d",
+        "version" : "509.1.1"
+      }
+    },
+    {
+      "identity" : "swiftsoup",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scinfu/SwiftSoup.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "028487d4a8a291b2fe1b4392b5425b6172056148"
+      }
+    }
+  ],
+  "version" : 3
+}

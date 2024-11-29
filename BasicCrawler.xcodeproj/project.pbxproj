@@ -12,11 +12,13 @@
 		1D954C9E2C009A980042AA63 /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */; };
 		1D954CA12C009ABD0042AA63 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954CA02C009ABD0042AA63 /* Alamofire */; };
 		1D954CA42C009ADA0042AA63 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954CA32C009ADA0042AA63 /* AsyncNinja */; };
+		1DEB87392CF946760022FD8B /* getSyncResultFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB87382CF946760022FD8B /* getSyncResultFrom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D954C7F2C0099390042AA63 /* BasicCrawler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasicCrawler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHTMLDoc.swift; sourceTree = "<group>"; };
+		1DEB87382CF946760022FD8B /* getSyncResultFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSyncResultFrom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		1D954C812C0099390042AA63 /* BasicCrawler */ = {
 			isa = PBXGroup;
 			children = (
+				1DEB87382CF946760022FD8B /* getSyncResultFrom.swift */,
 				1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */,
 			);
 			path = BasicCrawler;
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEB87392CF946760022FD8B /* getSyncResultFrom.swift in Sources */,
 				1D954C9E2C009A980042AA63 /* getHTMLDoc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
