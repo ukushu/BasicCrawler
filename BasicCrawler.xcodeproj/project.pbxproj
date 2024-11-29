@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0BEDDF2CF945EE00D84425 /* getSyncResultFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BEDDE2CF945ED00D84425 /* getSyncResultFrom.swift */; };
 		1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */; };
 		1D9BBC902BFEB3350071965B /* EssentialsStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC8F2BFEB3350071965B /* EssentialsStatic */; };
 		1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC922BFEB3670071965B /* Alamofire */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0BEDDE2CF945ED00D84425 /* getSyncResultFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSyncResultFrom.swift; sourceTree = "<group>"; };
 		1D9BBC802BFEB2250071965B /* libBasicCrawler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBasicCrawler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHTMLDoc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +55,7 @@
 		1D9BBC822BFEB2250071965B /* BasicCrawler */ = {
 			isa = PBXGroup;
 			children = (
+				1D0BEDDE2CF945ED00D84425 /* getSyncResultFrom.swift */,
 				1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */,
 			);
 			path = BasicCrawler;
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0BEDDF2CF945EE00D84425 /* getSyncResultFrom.swift in Sources */,
 				1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
