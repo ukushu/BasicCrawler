@@ -11,14 +11,30 @@
 		1D954C9C2C009A880042AA63 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954C9B2C009A880042AA63 /* SwiftSoup */; };
 		1D954C9E2C009A980042AA63 /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */; };
 		1D954CA12C009ABD0042AA63 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954CA02C009ABD0042AA63 /* Alamofire */; };
-		1D954CA42C009ADA0042AA63 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954CA32C009ADA0042AA63 /* AsyncNinja */; };
 		1DEB87392CF946760022FD8B /* getSyncResultFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB87382CF946760022FD8B /* getSyncResultFrom.swift */; };
+		1DEB873C2CF948880022FD8B /* AsyncNinja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB873B2CF948880022FD8B /* AsyncNinja.framework */; };
+		1DEB873D2CF948880022FD8B /* AsyncNinja.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB873B2CF948880022FD8B /* AsyncNinja.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1DEB873E2CF948890022FD8B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1DEB873D2CF948880022FD8B /* AsyncNinja.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D954C7F2C0099390042AA63 /* BasicCrawler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasicCrawler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHTMLDoc.swift; sourceTree = "<group>"; };
 		1DEB87382CF946760022FD8B /* getSyncResultFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSyncResultFrom.swift; sourceTree = "<group>"; };
+		1DEB873B2CF948880022FD8B /* AsyncNinja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,9 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D954CA42C009ADA0042AA63 /* AsyncNinja in Frameworks */,
 				1D0C36762C1E641B0099320D /* Essentials in Frameworks */,
 				1D954CA12C009ABD0042AA63 /* Alamofire in Frameworks */,
+				1DEB873C2CF948880022FD8B /* AsyncNinja.framework in Frameworks */,
 				1D954C9C2C009A880042AA63 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				1D954C812C0099390042AA63 /* BasicCrawler */,
+				1DEB873A2CF948880022FD8B /* Frameworks */,
 				1D954C802C0099390042AA63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +76,14 @@
 				1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */,
 			);
 			path = BasicCrawler;
+			sourceTree = "<group>";
+		};
+		1DEB873A2CF948880022FD8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB873B2CF948880022FD8B /* AsyncNinja.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +107,7 @@
 				1D954C7B2C0099390042AA63 /* Sources */,
 				1D954C7C2C0099390042AA63 /* Frameworks */,
 				1D954C7D2C0099390042AA63 /* Resources */,
+				1DEB873E2CF948890022FD8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -91,7 +117,6 @@
 			packageProductDependencies = (
 				1D954C9B2C009A880042AA63 /* SwiftSoup */,
 				1D954CA02C009ABD0042AA63 /* Alamofire */,
-				1D954CA32C009ADA0042AA63 /* AsyncNinja */,
 				1D0C36752C1E641B0099320D /* Essentials */,
 			);
 			productName = BasicCrawler;
@@ -126,7 +151,6 @@
 			packageReferences = (
 				1D954C9A2C009A880042AA63 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				1D954C9F2C009ABD0042AA63 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				1D954CA22C009ADA0042AA63 /* XCRemoteSwiftPackageReference "AsyncNinja" */,
 				1D0C36742C1E641B0099320D /* XCRemoteSwiftPackageReference "essentials" */,
 			);
 			productRefGroup = 1D954C802C0099390042AA63 /* Products */;
@@ -398,14 +422,6 @@
 				kind = branch;
 			};
 		};
-		1D954CA22C009ADA0042AA63 /* XCRemoteSwiftPackageReference "AsyncNinja" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/serg-vinnie/AsyncNinja.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -423,11 +439,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D954C9F2C009ABD0042AA63 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		1D954CA32C009ADA0042AA63 /* AsyncNinja */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D954CA22C009ADA0042AA63 /* XCRemoteSwiftPackageReference "AsyncNinja" */;
-			productName = AsyncNinja;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
