@@ -7,56 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0BEDDF2CF945EE00D84425 /* getSyncResultFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BEDDE2CF945ED00D84425 /* getSyncResultFrom.swift */; };
-		1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */; };
-		1D9BBC902BFEB3350071965B /* EssentialsStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC8F2BFEB3350071965B /* EssentialsStatic */; };
-		1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC922BFEB3670071965B /* Alamofire */; };
-		1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC952BFEB39A0071965B /* AsyncNinja */; };
-		1D9BBC992BFEB3D20071965B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9BBC982BFEB3D20071965B /* SwiftSoup */; };
+		1D0C36762C1E641B0099320D /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0C36752C1E641B0099320D /* Essentials */; };
+		1D954C9C2C009A880042AA63 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954C9B2C009A880042AA63 /* SwiftSoup */; };
+		1D954C9E2C009A980042AA63 /* getHTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */; };
+		1D954CA12C009ABD0042AA63 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954CA02C009ABD0042AA63 /* Alamofire */; };
+		1D954CA42C009ADA0042AA63 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D954CA32C009ADA0042AA63 /* AsyncNinja */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D0BEDDE2CF945ED00D84425 /* getSyncResultFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSyncResultFrom.swift; sourceTree = "<group>"; };
-		1D9BBC802BFEB2250071965B /* libBasicCrawler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBasicCrawler.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHTMLDoc.swift; sourceTree = "<group>"; };
+		1D954C7F2C0099390042AA63 /* BasicCrawler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasicCrawler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getHTMLDoc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D9BBC7E2BFEB2250071965B /* Frameworks */ = {
+		1D954C7C2C0099390042AA63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9BBC902BFEB3350071965B /* EssentialsStatic in Frameworks */,
-				1D9BBC992BFEB3D20071965B /* SwiftSoup in Frameworks */,
-				1D9BBC932BFEB3670071965B /* Alamofire in Frameworks */,
-				1D9BBC962BFEB39A0071965B /* AsyncNinja in Frameworks */,
+				1D954CA42C009ADA0042AA63 /* AsyncNinja in Frameworks */,
+				1D0C36762C1E641B0099320D /* Essentials in Frameworks */,
+				1D954CA12C009ABD0042AA63 /* Alamofire in Frameworks */,
+				1D954C9C2C009A880042AA63 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D9BBC772BFEB2250071965B = {
+		1D954C752C0099390042AA63 = {
 			isa = PBXGroup;
 			children = (
-				1D9BBC822BFEB2250071965B /* BasicCrawler */,
-				1D9BBC812BFEB2250071965B /* Products */,
+				1D954C812C0099390042AA63 /* BasicCrawler */,
+				1D954C802C0099390042AA63 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1D9BBC812BFEB2250071965B /* Products */ = {
+		1D954C802C0099390042AA63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D9BBC802BFEB2250071965B /* libBasicCrawler.a */,
+				1D954C7F2C0099390042AA63 /* BasicCrawler.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D9BBC822BFEB2250071965B /* BasicCrawler */ = {
+		1D954C812C0099390042AA63 /* BasicCrawler */ = {
 			isa = PBXGroup;
 			children = (
-				1D0BEDDE2CF945ED00D84425 /* getSyncResultFrom.swift */,
-				1D9BBC8C2BFEB2A70071965B /* getHTMLDoc.swift */,
+				1D954C9D2C009A980042AA63 /* getHTMLDoc.swift */,
 			);
 			path = BasicCrawler;
 			sourceTree = "<group>";
@@ -64,7 +61,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1D9BBC7C2BFEB2250071965B /* Headers */ = {
+		1D954C7A2C0099390042AA63 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,13 +71,14 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1D9BBC7F2BFEB2250071965B /* BasicCrawler */ = {
+		1D954C7E2C0099390042AA63 /* BasicCrawler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D9BBC892BFEB2250071965B /* Build configuration list for PBXNativeTarget "BasicCrawler" */;
+			buildConfigurationList = 1D954C912C0099390042AA63 /* Build configuration list for PBXNativeTarget "BasicCrawler" */;
 			buildPhases = (
-				1D9BBC7C2BFEB2250071965B /* Headers */,
-				1D9BBC7D2BFEB2250071965B /* Sources */,
-				1D9BBC7E2BFEB2250071965B /* Frameworks */,
+				1D954C7A2C0099390042AA63 /* Headers */,
+				1D954C7B2C0099390042AA63 /* Sources */,
+				1D954C7C2C0099390042AA63 /* Frameworks */,
+				1D954C7D2C0099390042AA63 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -88,31 +86,32 @@
 			);
 			name = BasicCrawler;
 			packageProductDependencies = (
-				1D9BBC8F2BFEB3350071965B /* EssentialsStatic */,
-				1D9BBC922BFEB3670071965B /* Alamofire */,
-				1D9BBC952BFEB39A0071965B /* AsyncNinja */,
-				1D9BBC982BFEB3D20071965B /* SwiftSoup */,
+				1D954C9B2C009A880042AA63 /* SwiftSoup */,
+				1D954CA02C009ABD0042AA63 /* Alamofire */,
+				1D954CA32C009ADA0042AA63 /* AsyncNinja */,
+				1D0C36752C1E641B0099320D /* Essentials */,
 			);
 			productName = BasicCrawler;
-			productReference = 1D9BBC802BFEB2250071965B /* libBasicCrawler.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 1D954C7F2C0099390042AA63 /* BasicCrawler.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1D9BBC782BFEB2250071965B /* Project object */ = {
+		1D954C762C0099390042AA63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
-					1D9BBC7F2BFEB2250071965B = {
+					1D954C7E2C0099390042AA63 = {
 						CreatedOnToolsVersion = 15.1;
 						LastSwiftMigration = 1510;
 					};
 				};
 			};
-			buildConfigurationList = 1D9BBC7B2BFEB2250071965B /* Build configuration list for PBXProject "BasicCrawler" */;
+			buildConfigurationList = 1D954C792C0099390042AA63 /* Build configuration list for PBXProject "BasicCrawler" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -120,36 +119,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 1D9BBC772BFEB2250071965B;
+			mainGroup = 1D954C752C0099390042AA63;
 			packageReferences = (
-				1D9BBC8E2BFEB3350071965B /* XCRemoteSwiftPackageReference "essentials" */,
-				1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */,
-				1D9BBC972BFEB3D20071965B /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				1D954C9A2C009A880042AA63 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				1D954C9F2C009ABD0042AA63 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1D954CA22C009ADA0042AA63 /* XCRemoteSwiftPackageReference "AsyncNinja" */,
+				1D0C36742C1E641B0099320D /* XCRemoteSwiftPackageReference "essentials" */,
 			);
-			productRefGroup = 1D9BBC812BFEB2250071965B /* Products */;
+			productRefGroup = 1D954C802C0099390042AA63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D9BBC7F2BFEB2250071965B /* BasicCrawler */,
+				1D954C7E2C0099390042AA63 /* BasicCrawler */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1D954C7D2C0099390042AA63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		1D9BBC7D2BFEB2250071965B /* Sources */ = {
+		1D954C7B2C0099390042AA63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0BEDDF2CF945EE00D84425 /* getSyncResultFrom.swift in Sources */,
-				1D9BBC8D2BFEB2A70071965B /* getHTMLDoc.swift in Sources */,
+				1D954C9E2C009A980042AA63 /* getHTMLDoc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1D9BBC872BFEB2250071965B /* Debug */ = {
+		1D954C8F2C0099390042AA63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -183,6 +191,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -207,10 +216,14 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		1D9BBC882BFEB2250071965B /* Release */ = {
+		1D954C902C0099390042AA63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,6 +257,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -261,32 +275,73 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		1D9BBC8A2BFEB2250071965B /* Debug */ = {
+		1D954C922C0099390042AA63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RPH4S2457V;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BasicCrawler;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		1D9BBC8B2BFEB2250071965B /* Release */ = {
+		1D954C932C0099390042AA63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RPH4S2457V;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BasicCrawler;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -294,20 +349,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D9BBC7B2BFEB2250071965B /* Build configuration list for PBXProject "BasicCrawler" */ = {
+		1D954C792C0099390042AA63 /* Build configuration list for PBXProject "BasicCrawler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D9BBC872BFEB2250071965B /* Debug */,
-				1D9BBC882BFEB2250071965B /* Release */,
+				1D954C8F2C0099390042AA63 /* Debug */,
+				1D954C902C0099390042AA63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D9BBC892BFEB2250071965B /* Build configuration list for PBXNativeTarget "BasicCrawler" */ = {
+		1D954C912C0099390042AA63 /* Build configuration list for PBXNativeTarget "BasicCrawler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D9BBC8A2BFEB2250071965B /* Debug */,
-				1D9BBC8B2BFEB2250071965B /* Release */,
+				1D954C922C0099390042AA63 /* Debug */,
+				1D954C932C0099390042AA63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -315,15 +370,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D9BBC8E2BFEB3350071965B /* XCRemoteSwiftPackageReference "essentials" */ = {
+		1D0C36742C1E641B0099320D /* XCRemoteSwiftPackageReference "essentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@gitlab.com:sergiy.vynnychenko/essentials.git";
+			repositoryURL = "https://gitlab.com/sergiy.vynnychenko/essentials.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		1D954C9A2C009A880042AA63 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		1D954C9F2C009ABD0042AA63 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -331,17 +394,9 @@
 				kind = branch;
 			};
 		};
-		1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */ = {
+		1D954CA22C009ADA0042AA63 /* XCRemoteSwiftPackageReference "AsyncNinja" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/serg-vinnie/AsyncNinja.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		1D9BBC972BFEB3D20071965B /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -350,27 +405,27 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D9BBC8F2BFEB3350071965B /* EssentialsStatic */ = {
+		1D0C36752C1E641B0099320D /* Essentials */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1D9BBC8E2BFEB3350071965B /* XCRemoteSwiftPackageReference "essentials" */;
-			productName = EssentialsStatic;
+			package = 1D0C36742C1E641B0099320D /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
 		};
-		1D9BBC922BFEB3670071965B /* Alamofire */ = {
+		1D954C9B2C009A880042AA63 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1D9BBC912BFEB3670071965B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 1D954C9A2C009A880042AA63 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		1D954CA02C009ABD0042AA63 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D954C9F2C009ABD0042AA63 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		1D9BBC952BFEB39A0071965B /* AsyncNinja */ = {
+		1D954CA32C009ADA0042AA63 /* AsyncNinja */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1D9BBC942BFEB39A0071965B /* XCRemoteSwiftPackageReference "AsyncNinja" */;
+			package = 1D954CA22C009ADA0042AA63 /* XCRemoteSwiftPackageReference "AsyncNinja" */;
 			productName = AsyncNinja;
-		};
-		1D9BBC982BFEB3D20071965B /* SwiftSoup */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D9BBC972BFEB3D20071965B /* XCRemoteSwiftPackageReference "SwiftSoup" */;
-			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 1D9BBC782BFEB2250071965B /* Project object */;
+	rootObject = 1D954C762C0099390042AA63 /* Project object */;
 }
