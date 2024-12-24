@@ -12,11 +12,13 @@ extension RunBlocking where Failure == Never {
             let task = Task(operation: operation)
             self.value = await task.result
         }
+        
         DispatchQueue.global().sync {
             while value == nil {
                 RunLoop.current.run(mode: .default, before: .distantFuture)
             }
         }
+        
         switch value {
         case let .success(value):
             return value
@@ -26,6 +28,14 @@ extension RunBlocking where Failure == Never {
     }
 }
 
+let queues: [DispatchQueue] = [
+    DispatchQueue.global(),
+    DispatchQueue.global(qos: .userInteractive),
+    DispatchQueue.global(qos: .userInitiated),
+    DispatchQueue.global(qos: .background),
+    DispatchQueue.global(qos: .utility)
+]
+
 @available(macOS 10.15, *)
 extension RunBlocking where Failure == Error {
     func runBlocking(_ operation: @Sendable @escaping () async throws -> T) throws -> T {
@@ -33,11 +43,13 @@ extension RunBlocking where Failure == Error {
             let task = Task(operation: operation)
             value = await task.result
         }
-        DispatchQueue.global().sync {
+        
+        queues.shuffled().first!.sync {
             while value == nil {
                 RunLoop.current.run(mode: .default, before: .distantFuture)
             }
         }
+        
         switch value {
         case let .success(value):
             return value
