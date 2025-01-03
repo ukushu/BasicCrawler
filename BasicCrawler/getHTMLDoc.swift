@@ -58,7 +58,7 @@ public func checkAccessibility(from urlStr: String) -> Bool {
     fatalError()
 }
 
-public func check404(from urlStr: String) -> Bool {
+public func check404(from urlStr: String, retriesSleep: TimeInterval) -> Bool {
     let url = URL(string: urlStr)!
     
     let config = URLSessionConfiguration.default
@@ -74,6 +74,8 @@ public func check404(from urlStr: String) -> Bool {
         if let statusCode = response?.getStatusCode() {
             return statusCode == 404
         }
+        
+        Thread.sleep(forTimeInterval: retriesSleep)
     }
     
     fatalError()
