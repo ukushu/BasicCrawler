@@ -1,4 +1,29 @@
 import Foundation
+import AppKit
+
+public func downloadImage(from urlStr: String) async -> NSImage? {
+    guard let url = URL(string: urlStr) else { return nil }
+    guard let data = await downloadFile(from: url) else { return nil }
+    return NSImage(data: data)
+}
+
+public func downloadFile(from urlStr: String) async -> Data? {
+    guard let url = URL(string: urlStr) else { return nil }
+    
+    return try? await withUnsafeThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            continuation.resume(returning: data)
+        }.resume()
+    }
+}
+
+public func downloadFile(from url: URL) async -> Data? {
+    return try? await withUnsafeThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            continuation.resume(returning: data)
+        }.resume()
+    }
+}
 
 @available(macOS 10.15, *)
 private final class RunBlocking<T, Failure: Error> {
