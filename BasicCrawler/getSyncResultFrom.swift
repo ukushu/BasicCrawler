@@ -69,7 +69,7 @@ extension RunBlocking where Failure == Error {
             value = await task.result
         }
         
-        queues.shuffled().first!.sync {
+        DispatchQueue.global(qos: .userInteractive).sync {
             while value == nil {
                 RunLoop.current.run(mode: .default, before: .distantFuture)
             }
