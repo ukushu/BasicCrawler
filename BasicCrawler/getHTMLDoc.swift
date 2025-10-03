@@ -13,9 +13,7 @@ public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast, c
     guard let url = URL(string: urlStr) else { return nil }
     
     if accessType == .Fast {
-        guard let html = //getHtmlSync(from: urlStr, cookies: cookies)
-                
-                HTML.getFastFrom(from: url, cookies: cookies)
+        guard let html = getHtmlSync(from: urlStr, cookies: cookies)
         else { return nil }
         
         let htmlFixed = html.removingPercentEncoding ?? html
@@ -93,29 +91,6 @@ fileprivate class HTML {
             
             return try? await loader.getHTML(from: URL(string: url)!, cookies: cookies)
         }
-    }
-    
-    static func getFastFrom(from url: URL, cookies: [HTTPCookie]) -> String? {
-        let config = URLSessionConfiguration.default
-        config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
-        
-        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
-        
-        let cookieStorage = HTTPCookieStorage()
-        
-        for c in cookies {
-            cookieStorage.setCookie(c)
-        }
-        
-        session.configuration.httpCookieStorage = cookieStorage
-        
-        let html = session.data(at: url)
-            .wait()
-            .flatMap{ $0.0.asNonOptional }
-            .flatMap{ $0.asString() }
-            .maybeSuccess
-        
-        return html
     }
 }
 
