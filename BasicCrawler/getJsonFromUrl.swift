@@ -26,10 +26,14 @@ public func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Fu
         
         let (data, _) = try await session.data(from: url)
         
-        guard let tmp = String(data: data, encoding: .utf8)
-        else { return "Error" }
+        if let jsonObject = try? JSONSerialization.jsonObject(with: data),
+           let prettyData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted, .withoutEscapingSlashes]),
+           let jsonString = String(data: prettyData, encoding: .utf8)
+        {
+           return jsonString
+        }
         
-        return tmp
+        return String(data: data, encoding: .utf8) ?? "Error"
     }
 }
 
