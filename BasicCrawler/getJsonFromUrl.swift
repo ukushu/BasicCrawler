@@ -6,6 +6,30 @@ public func getJsonSync(from urlStr: String, cookies: [HTTPCookie]) -> String? {
     getJsonFuture(from: urlStr, cookies: cookies).wait().maybeSuccess
 }
 
+public func getDataFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<Data> {
+    guard let url = URL(string: urlStr) else {
+        print()
+        return .failed(WTF("Wrong URL"))
+    }
+    
+    return Flow.Future {
+        let config = URLSessionConfiguration.default
+        config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
+        
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+        
+        let cookieStorage = HTTPCookieStorage()
+        
+        for c in cookies {
+            cookieStorage.setCookie(c)
+        }
+        
+        let (data, _) = try await session.data(from: url)
+        
+        return data
+    }
+}
+
 public func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<String> {
     guard let url = URL(string: urlStr) else {
         print()
