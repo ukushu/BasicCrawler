@@ -3,8 +3,8 @@ import Foundation
 import Essentials
 import AppKit
 
-struct Crawl {
-    struct Html {
+public struct Crawl {
+    public struct Html {
         public static func getSync(from urlStr: String, cookies: [HTTPCookie]) -> String? {
             getHtmlFuture(from: urlStr, cookies: cookies).wait().maybeSuccess
         }
@@ -33,7 +33,7 @@ struct Crawl {
         }
     }
     
-    struct Data {
+    public struct Data {
         public static func getSync(from urlStr: String, cookies: [HTTPCookie]) -> Foundation.Data? {
             Crawl.Data.getAsyncF(from: urlStr, cookies: cookies).wait().maybeSuccess
         }
@@ -47,7 +47,7 @@ struct Crawl {
         }
     }
     
-    struct Json {
+    public struct Json {
         public static func getSync(from urlStr: String, cookies: [HTTPCookie]) -> String? {
             getJsonFuture(from: urlStr, cookies: cookies).wait().maybeSuccess
         }
@@ -61,7 +61,7 @@ struct Crawl {
         }
     }
     
-    struct File {
+    public struct File {
         public static func imgSync(from urlStr: String, cookies: [HTTPCookie]) async -> NSImage? {
             if let data = Crawl.Data.getAsyncF(from: urlStr, cookies: cookies).wait().maybeSuccess {
                 return NSImage(data: data)
