@@ -7,4 +7,14 @@ git@github.com:ukushu/BasicCrawler.git
 https://github.com/ukushu/BasicCrawler.git
 ```
 
-Better to use Erik !!! https://github.com/phimage/Erik
+Best practice to use this repo is:
+1) use only functions from ```Crawl.swift``` & ```GSheets.swift``` documents
+2) use them with https://github.com/phimage/Erik
+
+OR
+
+Use ```Erik``` only without this repository!
+
+Important:
+* This repo supports async and sync html download methods. Better to use only async!
+* Better do not use functions with "Advanced" in name as they may crash your app. This functions needed only if not able get some html with "no-advanced" functions.
