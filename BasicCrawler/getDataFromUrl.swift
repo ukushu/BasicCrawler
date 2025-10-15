@@ -2,9 +2,19 @@
 import Foundation
 import Essentials
 
-func getHtmlFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<String> {
+public func getDataAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> Data? {
+    guard let url = URL(string: urlStr) else { throw WTF("incorrect url") }
+    
+    return try await withUnsafeThrowingContinuation { continuation in
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            continuation.resume(returning: data)
+        }.resume()
+    }
+}
+
+public func getDataFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<Data> {
     guard let url = URL(string: urlStr) else {
-        return .failed( WTF("Wrong URL") )
+        return .failed(WTF("Wrong URL"))
     }
     
     return Flow.Future {
@@ -21,10 +31,6 @@ func getHtmlFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<St
         
         let (data, _) = try await session.data(from: url)
         
-        if let tmp = String(data: data, encoding: .utf8) {
-            return tmp.removingPercentEncoding ?? tmp
-        }
-        
-        throw WTF("Failed to get json string from data")
+        return data
     }
 }

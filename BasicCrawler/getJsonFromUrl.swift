@@ -2,37 +2,26 @@
 import Foundation
 import Essentials
 
-public func getJsonSync(from urlStr: String, cookies: [HTTPCookie]) -> String? {
-    getJsonFuture(from: urlStr, cookies: cookies).wait().maybeSuccess
-}
-
-public func getDataFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<Data> {
+func getJsonAsync(from urlStr: String) async throws -> String {
     guard let url = URL(string: urlStr) else {
-        print()
-        return .failed(WTF("Wrong URL"))
+        throw WTF("Wrong URL")
     }
     
-    return Flow.Future {
-        let config = URLSessionConfiguration.default
-        config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
+    do {
+        let (data, _) = try await URLSession.shared.data(from: url)
         
-        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
-        
-        let cookieStorage = HTTPCookieStorage()
-        
-        for c in cookies {
-            cookieStorage.setCookie(c)
+        if let tmp = String(data: data, encoding: .utf8) {
+            return tmp.removingPercentEncoding ?? tmp
         }
         
-        let (data, _) = try await session.data(from: url)
-        
-        return data
+        throw WTF("Failed to get json string from data")
+    } catch {
+        throw WTF("Request error: \(error)")
     }
 }
 
-public func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<String> {
+func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<String> {
     guard let url = URL(string: urlStr) else {
-        print()
         return .failed(WTF("Wrong URL"))
     }
     
@@ -57,23 +46,10 @@ public func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Fu
            return jsonString
         }
         
-        return String(data: data, encoding: .utf8) ?? "Error"
-    }
-}
-
-public func getJsonAsync(from urlStr: String) async -> String? {
-    guard let url = URL(string: urlStr) else {
-        print("Невірна URL")
-        return nil
-    }
-    
-    do {
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let tmp = String(data: data, encoding: .utf8)
+        if let tmp = String(data: data, encoding: .utf8) {
+            return tmp.removingPercentEncoding ?? tmp
+        }
         
-        return tmp?.removingPercentEncoding ?? tmp
-    } catch {
-        print("Помилка запиту: \(error)")
-        return nil
+        throw WTF("Failed to get json string from data")
     }
 }
