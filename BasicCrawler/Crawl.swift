@@ -70,6 +70,13 @@ public struct Crawl {
             return nil
         }
         
+        /// Cookies doent work here!!!!!
+        /// ```
+        /// Cookies doent work here!!!!!
+        /// Cookies doent work here!!!!!
+        /// Cookies doent work here!!!!!
+        /// ```
+        @available(*, deprecated, renamed: "---", message: "cookies doest work here")
         public static func imgAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> NSImage {
             guard let data = try await Crawl.Data.getAsync(from: urlStr, cookies: cookies),
                   let nsImg = NSImage(data: data)
