@@ -2,7 +2,7 @@
 import Foundation
 import Essentials
 
-public func getDataAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> Data? {
+func getDataAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> Data? {
     guard let url = URL(string: urlStr) else { throw WTF("incorrect url") }
     
     let session = createSession(cookies: cookies)
@@ -14,12 +14,10 @@ public func getDataAsync(from urlStr: String, cookies: [HTTPCookie]) async throw
     }
 }
 
-public func getDataFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<Data> {
-    guard let url = URL(string: urlStr) else {
-        return .failed(WTF("Wrong URL"))
-    }
-    
+func getDataFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<Data> {
     return Flow.Future {
+        guard let url = URL(string: urlStr) else { throw WTF("incorrect url") }
+        
         let session = createSession(cookies: cookies)
         
         let (data, _) = try await session.data(from: url)
