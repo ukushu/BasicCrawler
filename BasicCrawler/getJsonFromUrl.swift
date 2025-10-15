@@ -2,22 +2,20 @@
 import Foundation
 import Essentials
 
-func getJsonAsync(from urlStr: String) async throws -> String {
+func getJsonAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> String {
     guard let url = URL(string: urlStr) else {
         throw WTF("Wrong URL")
     }
     
-    do {
-        let (data, _) = try await URLSession.shared.data(from: url)
-        
-        if let tmp = String(data: data, encoding: .utf8) {
-            return tmp.removingPercentEncoding ?? tmp
-        }
-        
-        throw WTF("Failed to get json string from data")
-    } catch {
-        throw WTF("Request error: \(error)")
+    let session = createSession(cookies: cookies)
+    
+    let (data, _) = try await session.data(from: url)
+    
+    if let tmp = String(data: data, encoding: .utf8) {
+        return tmp.removingPercentEncoding ?? tmp
     }
+    
+    throw WTF("Failed to get json string from data")
 }
 
 func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<String> {
@@ -26,16 +24,7 @@ func getJsonFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<St
     }
     
     return Flow.Future {
-        let config = URLSessionConfiguration.default
-        config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
-        
-        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
-        
-        let cookieStorage = HTTPCookieStorage()
-        
-        for c in cookies {
-            cookieStorage.setCookie(c)
-        }
+        let session = createSession(cookies: cookies)
         
         let (data, _) = try await session.data(from: url)
         

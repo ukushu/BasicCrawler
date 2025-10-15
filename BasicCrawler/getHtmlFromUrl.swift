@@ -8,16 +8,7 @@ func getHtmlFuture(from urlStr: String, cookies: [HTTPCookie]) -> Flow.Future<St
     }
     
     return Flow.Future {
-        let config = URLSessionConfiguration.default
-        config.headers = [ "User-Agent": userAgentsList.randomElement()! ]
-        
-        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
-        
-        let cookieStorage = HTTPCookieStorage()
-        
-        for c in cookies {
-            cookieStorage.setCookie(c)
-        }
+        let session = createSession(cookies: cookies)
         
         let (data, _) = try await session.data(from: url)
         

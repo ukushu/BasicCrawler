@@ -13,10 +13,10 @@ struct AsyncToSync {
     ///    return try? await loader.getHTML(from: URL(string: url)!)
     /// }
     /// ```
-    @available(macOS 10.15, *)
-    static func getFrom<T>(@_implicitSelfCapture _ operation: @Sendable @escaping () async -> T) -> T {
-        RunBlocking().runBlocking(operation)
-    }
+//    @available(macOS 10.15, *)
+//    static func getFrom<T>(@_implicitSelfCapture _ operation: @Sendable @escaping () async -> T) -> T {
+//        try! RunBlocking().runBlocking(operation)
+//    }
     
     /// ```
     /// //Sample of usage (try/throws)

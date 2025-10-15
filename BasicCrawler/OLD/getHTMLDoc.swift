@@ -4,25 +4,12 @@ import Alamofire
 import AsyncNinja
 import SwiftSoup
 
-public enum UrlAccessType {
-    case Fast
-    case Advanced
-}
-
-public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast, cookies: [HTTPCookie] = []) -> Document? {
-    if accessType == .Fast {
-        guard let html = Crawl.Html.getSync(from: urlStr, cookies: cookies),
-           let doc: Document = try? SwiftSoup.parse(html)
-        else { return nil }
-        
-        return doc
-    } else {
-        guard let html = try? Crawl.Html.getAdvancedSync(url: urlStr, cookies: cookies),
-              let doc: Document = try? SwiftSoup.parse(html)
-        else { return nil }
-        
-        return doc
-    }
+public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .fast, cookies: [HTTPCookie] = []) -> Document? {
+    guard let html = Crawl.Html.getSync(from: urlStr, cookies: cookies, access: accessType),
+       let doc: Document = try? SwiftSoup.parse(html)
+    else { return nil }
+    
+    return doc
 }
 
 public func checkAccessibility(from urlStr: String) -> Bool {
