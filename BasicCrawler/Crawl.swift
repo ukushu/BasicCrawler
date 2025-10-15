@@ -26,11 +26,18 @@ struct Crawl {
         public static func getAdvancedAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> String? {
             let loader = await MyInternetLoader()
             
-            return try await loader.getHTML(from: URL(string: urlStr)!, cookies: cookies)
+            guard let html = try await loader.getHTML(from: URL(string: urlStr)!, cookies: cookies)
+            else { return nil }
+            
+            return html.removingPercentEncoding ?? html
         }
     }
     
     struct Data {
+        public static func getSync(from urlStr: String, cookies: [HTTPCookie]) -> Foundation.Data? {
+            Crawl.Data.getAsyncF(from: urlStr, cookies: cookies).wait().maybeSuccess
+        }
+        
         public static func getAsync(from urlStr: String, cookies: [HTTPCookie]) async throws -> Foundation.Data? {
             try await getDataAsync(from: urlStr, cookies: cookies)
         }

@@ -11,20 +11,16 @@ public enum UrlAccessType {
 
 public func getHTMLDoc(from urlStr: String, accessType: UrlAccessType = .Fast, cookies: [HTTPCookie] = []) -> Document? {
     if accessType == .Fast {
-        guard let html = Crawl.Html.getSync(from: urlStr, cookies: cookies)
+        guard let html = Crawl.Html.getSync(from: urlStr, cookies: cookies),
+           let doc: Document = try? SwiftSoup.parse(html)
         else { return nil }
         
-        let htmlFixed = html.removingPercentEncoding ?? html
-        
-        guard let doc: Document = try? SwiftSoup.parse(htmlFixed) else { return nil }
         return doc
     } else {
-        guard let html = try? Crawl.Html.getAdvancedSync(url: urlStr, cookies: cookies)
+        guard let html = try? Crawl.Html.getAdvancedSync(url: urlStr, cookies: cookies),
+              let doc: Document = try? SwiftSoup.parse(html)
         else { return nil }
         
-        let htmlFixed = html.removingPercentEncoding ?? html
-        
-        guard let doc: Document = try? SwiftSoup.parse(htmlFixed) else { return nil }
         return doc
     }
 }
