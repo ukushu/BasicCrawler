@@ -20,7 +20,6 @@
 		1DB55E1A2E9046760021FBD3 /* getHtmlFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB55E192E90466A0021FBD3 /* getHtmlFromUrl.swift */; };
 		1DDF7E2F2E9F5C68002728E9 /* UrlAccessType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF7E2E2E9F5C5E002728E9 /* UrlAccessType.swift */; };
 		1DDF7E312E9F6300002728E9 /* createSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF7E302E9F62FF002728E9 /* createSession.swift */; };
-		1DEB79D42DC83DE5006B6059 /* GSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB79D32DC83DE1006B6059 /* GSheets.swift */; };
 		1DEB87392CF946760022FD8B /* AsyncToSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB87382CF946760022FD8B /* AsyncToSync.swift */; };
 		1DEB873C2CF948880022FD8B /* AsyncNinja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB873B2CF948880022FD8B /* AsyncNinja.framework */; };
 		1DEB873D2CF948880022FD8B /* AsyncNinja.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB873B2CF948880022FD8B /* AsyncNinja.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -52,7 +51,6 @@
 		1DB55E192E90466A0021FBD3 /* getHtmlFromUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHtmlFromUrl.swift; sourceTree = "<group>"; };
 		1DDF7E2E2E9F5C5E002728E9 /* UrlAccessType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlAccessType.swift; sourceTree = "<group>"; };
 		1DDF7E302E9F62FF002728E9 /* createSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSession.swift; sourceTree = "<group>"; };
-		1DEB79D32DC83DE1006B6059 /* GSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSheets.swift; sourceTree = "<group>"; };
 		1DEB87382CF946760022FD8B /* AsyncToSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncToSync.swift; sourceTree = "<group>"; };
 		1DEB873B2CF948880022FD8B /* AsyncNinja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncNinja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				1D0936B62E9F27BA00BB2A0D /* Crawl.swift */,
-				1DEB79D32DC83DE1006B6059 /* GSheets.swift */,
 				1D0936AE2E9F201F00BB2A0D /* Helpers */,
 				1DB55E192E90466A0021FBD3 /* getHtmlFromUrl.swift */,
 				1D0936B82E9F2C0D00BB2A0D /* getDataFromUrl.swift */,
@@ -226,7 +223,6 @@
 				1DB55E182E90432F0021FBD3 /* getJsonFromUrl.swift in Sources */,
 				1D0936B42E9F212000BB2A0D /* userAgentsList.swift in Sources */,
 				1DDF7E312E9F6300002728E9 /* createSession.swift in Sources */,
-				1DEB79D42DC83DE5006B6059 /* GSheets.swift in Sources */,
 				1D0936B22E9F207E00BB2A0D /* URLResponse+.swift in Sources */,
 				1DEB87392CF946760022FD8B /* AsyncToSync.swift in Sources */,
 				1DDF7E2F2E9F5C68002728E9 /* UrlAccessType.swift in Sources */,
