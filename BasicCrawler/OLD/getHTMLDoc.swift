@@ -40,6 +40,10 @@ public func checkAccessibility(from urlStr: String) -> Bool {
 }
 
 public func check404(from urlStr: String, tries: Int = 8, retriesSleep: TimeInterval) -> Bool {
+    if urlStr.count < 3 {
+        return true
+    }
+    
     let url = URL(string: urlStr)!
     
     let config = URLSessionConfiguration.default
