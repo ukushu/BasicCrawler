@@ -16,5 +16,6 @@ OR
 Use ```Erik``` only without this repository!
 
 Important:
+* Here is a lot of shit-code that must be not used at all -- especially in production :)
 * This repo supports async and sync html download methods. Better to use only async!
 * Better do not use functions with "Advanced" in name as they may crash your app. This functions needed only if not able get some html with "no-advanced" functions.
